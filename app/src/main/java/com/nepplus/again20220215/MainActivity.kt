@@ -18,17 +18,13 @@ class MainActivity : AppCompatActivity() {
         btnMoveToOtherActivity.setOnClickListener {
             val myIntent = Intent(this,OtherActivity::class.java)
             startActivity(myIntent)
+        }
+        btnSendMessage.setOnClickListener {
+            val inputMessage = edtMessage.text.toString()
 
-
-            btnSendMessage.setOnClickListener {
-                val inputMessage = edtMessage.text.toString()
-
-                val myIntent = Intent(this, ViewMessage::class.java)
-                myIntent.putExtra("message", inputMessage)
-                startActivity(myIntent)
-            }
-
-
+            val myIntent = Intent(this, ViewMessage::class.java)
+            myIntent.putExtra("message", inputMessage)
+            startActivity(myIntent)
         }
 
         btnEditNickname.setOnClickListener {
